@@ -23,7 +23,7 @@ WORKDIR /usr/src/app
 COPY --chown=node:node package*.json ./
 COPY --chown=node:node --from=development /usr/src/app/node_modules ./node_modules
 COPY --chown=node:node . .
-RUN npm run prisma:migrate:prod
+RUN npm run prisma:migrate
 RUN npm run build
 ENV NODE_ENV production
 # Running `npm ci` removes the existing node_modules directory.
