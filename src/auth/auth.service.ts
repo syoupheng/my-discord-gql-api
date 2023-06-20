@@ -50,8 +50,8 @@ export class AuthService {
 
   generateCookie(req: { res: Response }, token: string) {
     const COOKIE_OPTIONS: CookieOptions = {
-      secure: this.config.get('NODE_ENV') === 'production',
-      sameSite: this.config.get('NODE_ENV') === 'production' ? 'none' : 'lax',
+      secure: !(this.config.get('NODE_ENV') === 'development'),
+      sameSite: this.config.get('NODE_ENV') === 'development' ? 'lax' : 'none',
       httpOnly: true,
       expires: dayjs()
         .add(this.config.get('HTTP_ONLY_COOKIE_EXP_TIME') ?? 1, 'days')
