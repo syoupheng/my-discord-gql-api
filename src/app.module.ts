@@ -38,7 +38,7 @@ import { AvatarModule } from './avatar/avatar.module';
           'graphql-ws': true,
           'subscriptions-transport-ws': true,
         },
-        introspection: true,
+        introspection: process.env.NODE_ENV === 'development',
         formatError: (error) => {
           if (error.extensions.code === 'INTERNAL_SERVER_ERROR') return new GraphQLError('Internal Server Error');
           return error;
