@@ -36,6 +36,7 @@ USER node
 
 FROM node:18 As production
 
+COPY --chown=node:node --from=build /usr/src/app/prisma/schema.prisma ./prisma/schema.prisma
 COPY --chown=node:node --from=build /usr/src/app/node_modules ./node_modules
 COPY --chown=node:node --from=build /usr/src/app/dist ./dist
 CMD [ "node", "dist/main.js" ]
