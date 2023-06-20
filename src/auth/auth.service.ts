@@ -7,7 +7,7 @@ import { ConfigService } from '@nestjs/config';
 import { UserStatus } from '../users/enums/user-status.enum';
 import { AuthUser } from './entities/auth-user.entity';
 import { AvatarService } from '../avatar/avatar.service';
-import { Response } from 'express';
+import { CookieOptions, Response } from 'express';
 import * as dayjs from 'dayjs';
 
 @Injectable()
@@ -49,8 +49,9 @@ export class AuthService {
   }
 
   generateCookie(req: { res: Response }, token: string) {
-    const COOKIE_OPTIONS = {
-      secure: false,
+    const COOKIE_OPTIONS: CookieOptions = {
+      secure: this.config.get('NODE_ENV') === 'production',
+      sameSite: this.config.get('NODE_ENV') === 'production' ? 'none' : 'lax',
       httpOnly: true,
       expires: dayjs()
         .add(this.config.get('HTTP_ONLY_COOKIE_EXP_TIME') ?? 1, 'days')
