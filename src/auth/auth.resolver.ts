@@ -51,7 +51,11 @@ export class AuthResolver {
   @Mutation(() => SuccessResponse)
   @Public()
   logout(@Context() ctx: GraphQLContext): SuccessResponse {
-    ctx.req.res?.clearCookie('access_token');
+    ctx.req.res?.clearCookie('access_token', {
+      httpOnly: true,
+      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+      secure: process.env.NODE_ENV === 'production',
+    });
     return { success: true };
   }
 
