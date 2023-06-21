@@ -57,8 +57,6 @@ export class AuthService {
         .add(this.config.get('HTTP_ONLY_COOKIE_EXP_TIME') ?? 1, 'days')
         .toDate(),
     };
-    console.log(COOKIE_OPTIONS);
-
     return req.res.cookie('access_token', token, COOKIE_OPTIONS);
   }
 }
