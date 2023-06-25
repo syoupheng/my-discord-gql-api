@@ -1,6 +1,5 @@
 [
   {
-    "id": 4,
     "username": "Rachel Green",
     "discriminator": "2385",
     "email": "rachel.green@gmail.com",
@@ -12,7 +11,6 @@
     "avatarColor": "#e6005c"
   },
   {
-    "id": 13,
     "username": "Kelly Kapoor",
     "discriminator": "4791",
     "email": "kelly.kapoor@gmail.com",
@@ -24,7 +22,6 @@
     "avatarColor": "#3333ff"
   },
   {
-    "id": 15,
     "username": "Kevin Malone",
     "discriminator": "8720",
     "email": "kevin.malone@gmail.com",
@@ -36,7 +33,6 @@
     "avatarColor": "#00b386"
   },
   {
-    "id": 19,
     "username": "Abed Nadir",
     "discriminator": "0912",
     "email": "abed.nadir@gmail.com",
@@ -48,7 +44,6 @@
     "avatarColor": "#ff5c33"
   },
   {
-    "id": 21,
     "username": "Britta Perry",
     "discriminator": "4462",
     "email": "britta.perry@gmail.com",
@@ -60,7 +55,6 @@
     "avatarColor": "#a3a3c2"
   },
   {
-    "id": 22,
     "username": "Annie Edison",
     "discriminator": "4164",
     "email": "annie.edison@gmail.com",
@@ -72,7 +66,6 @@
     "avatarColor": "#3333ff"
   },
   {
-    "id": 28,
     "username": "Léodagan",
     "discriminator": "2692",
     "email": "leodagan@gmail.com",
@@ -84,7 +77,6 @@
     "avatarColor": "#008ae6"
   },
   {
-    "id": 32,
     "username": "Merlin",
     "discriminator": "3059",
     "email": "merlin@gmail.com",
@@ -96,7 +88,6 @@
     "avatarColor": "#e67300"
   },
   {
-    "id": 30,
     "username": "Lancelot du Lac",
     "discriminator": "7640",
     "email": "lancelot@gmail.com",
@@ -108,7 +99,6 @@
     "avatarColor": "#ffdb4d"
   },
   {
-    "id": 3,
     "username": "Joey Tribbiani",
     "discriminator": "7971",
     "email": "joey.tribbiani@gmail.com",
@@ -120,7 +110,6 @@
     "avatarColor": "#a3a3c2"
   },
   {
-    "id": 7,
     "username": "Michael Scott",
     "discriminator": "3200",
     "email": "michael.scott@gmail.com",
@@ -132,7 +121,6 @@
     "avatarColor": "#ff5c33"
   },
   {
-    "id": 9,
     "username": "Jim Halpert",
     "discriminator": "3924",
     "email": "jim.halpert@gmail.com",
@@ -144,7 +132,6 @@
     "avatarColor": "#ffdb4d"
   },
   {
-    "id": 26,
     "username": "Perceval",
     "discriminator": "5758",
     "email": "perceval@gmail.com",
@@ -156,7 +143,6 @@
     "avatarColor": "#e6005c"
   },
   {
-    "id": 17,
     "username": "Jeff Winger",
     "discriminator": "2429",
     "email": "jeff.winger@gmail.com",
@@ -168,7 +154,6 @@
     "avatarColor": "#3333ff"
   },
   {
-    "id": 20,
     "username": "Pierce Hawthorne",
     "discriminator": "7738",
     "email": "pierce.hawthorne@gmail.com",
@@ -180,7 +165,6 @@
     "avatarColor": "#ffdb4d"
   },
   {
-    "id": 25,
     "username": "Arthur Pendragon - Le Sanglier de Cornouailles",
     "discriminator": "2240",
     "email": "arthur.pendragon@gmail.com",
@@ -192,7 +176,6 @@
     "avatarColor": "#ffdb4d"
   },
   {
-    "id": 23,
     "username": "Shirley Bennett",
     "discriminator": "3854",
     "email": "shirley.bennett@gmail.com",
@@ -204,7 +187,6 @@
     "avatarColor": "#a3a3c2"
   },
   {
-    "id": 16,
     "username": "Toby Flenderson",
     "discriminator": "1237",
     "email": "toby.flenderson@gmail.com",
@@ -216,7 +198,6 @@
     "avatarColor": "#3333ff"
   },
   {
-    "id": 18,
     "username": "Troy Barnes",
     "discriminator": "4240",
     "email": "troy.barnes@gmail.com",
@@ -228,7 +209,6 @@
     "avatarColor": "#ffdb4d"
   },
   {
-    "id": 10,
     "username": "Pam Beesly",
     "discriminator": "4216",
     "email": "pam.beesly@gmail.com",
@@ -240,7 +220,6 @@
     "avatarColor": "#ffdb4d"
   },
   {
-    "id": 12,
     "username": "Ryan Howard",
     "discriminator": "2651",
     "email": "ryan.howard@gmail.com",
@@ -252,7 +231,6 @@
     "avatarColor": "#a3a3c2"
   },
   {
-    "id": 6,
     "username": "Pheobe Buffay",
     "discriminator": "7768",
     "email": "pheobe.buffay@gmail.com",
@@ -264,7 +242,6 @@
     "avatarColor": "#ffdb4d"
   },
   {
-    "id": 14,
     "username": "Oscar Martinez",
     "discriminator": "0992",
     "email": "oscar.martinez@gmail.com",
@@ -276,7 +253,6 @@
     "avatarColor": "#ef4444"
   },
   {
-    "id": 1,
     "username": "Ross Geller",
     "discriminator": "9075",
     "email": "ross.geller@gmail.com",
@@ -288,7 +264,6 @@
     "avatarColor": "#45c46d"
   },
   {
-    "id": 2,
     "username": "Chandler Bing",
     "discriminator": "2499",
     "email": "chandler.bing@gmail.com",
@@ -300,7 +275,6 @@
     "avatarColor": "#008ae6"
   },
   {
-    "id": 29,
     "username": "Bohort",
     "discriminator": "7933",
     "email": "bohort@gmail.com",
@@ -312,7 +286,6 @@
     "avatarColor": "#45c46d"
   },
   {
-    "id": 31,
     "username": "Père Blaise",
     "discriminator": "6464",
     "email": "pere.blaise@gmail.com",
@@ -324,7 +297,6 @@
     "avatarColor": "#e6005c"
   },
   {
-    "id": 24,
     "username": "Senor Chang",
     "discriminator": "9452",
     "email": "senor.chang@gmail.com",
@@ -336,7 +308,6 @@
     "avatarColor": "#ef4444"
   },
   {
-    "id": 33,
     "username": "Guenièvre",
     "discriminator": "1790",
     "email": "guenièvre@gmail.com",
@@ -348,7 +319,6 @@
     "avatarColor": "#e67300"
   },
   {
-    "id": 11,
     "username": "Angela Martin",
     "discriminator": "9870",
     "email": "angela.martin@gmail.com",
@@ -360,7 +330,6 @@
     "avatarColor": "#a3a3c2"
   },
   {
-    "id": 27,
     "username": "Karadoc",
     "discriminator": "1399",
     "email": "karadoc@gmail.com",
@@ -372,7 +341,6 @@
     "avatarColor": "#008ae6"
   },
   {
-    "id": 5,
     "username": "Monica Geller",
     "discriminator": "1004",
     "email": "monica.geller@gmail.com",
@@ -384,7 +352,6 @@
     "avatarColor": "#ffdb4d"
   },
   {
-    "id": 8,
     "username": "Dwight Schrute",
     "discriminator": "9689",
     "email": "dwight.schrute@gmail.com",
