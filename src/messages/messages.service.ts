@@ -156,7 +156,7 @@ export class MessagesService {
 
   async callChatGPT(channelId: number, mentionsIds: number[], membersInChannel: MembersInChannel[], message: Message) {
     const DEFAUL_RESPONSE = "Désolé, je ne peux pas répondre à ta question pour le moment...N'hésite pas à me relancer un peu plus tard !";
-    const chatGptUser = this.chatGptService.getChatGptUserInChannel(membersInChannel, mentionsIds);
+    const chatGptUser = await this.chatGptService.getChatGptUserInChannel(membersInChannel, mentionsIds, message);
     if (!chatGptUser) return;
     const chatGptMessages = await this.chatGptService.buildChatGptPrompt(message, chatGptUser, channelId);
     this.publishTypingNotification(channelId, chatGptUser.memberId, chatGptUser.member.username, membersInChannel);
