@@ -18,9 +18,16 @@ export class ChatGptService {
     });
   }
 
-  getChatGptUserInChannel(membersInChannel: MembersInChannel[], mentionsIds: number[]) {
+  async getChatGptUserInChannel(membersInChannel: MembersInChannel[], mentionsIds: number[], message: Message) {
     let chatGptUsers = membersInChannel.filter(({ member }) => member.chatGptRole);
     if (mentionsIds.length) chatGptUsers = chatGptUsers.filter((member) => mentionsIds.includes(member.memberId));
+    if (!mentionsIds.length && message.respondsToId) {
+      const referencedMessage = await this.messageRepository.findById(message.respondsToId);
+      if (referencedMessage) {
+        const chatGptUser = chatGptUsers.find(({ memberId }) => memberId === referencedMessage.authorId);
+        if (chatGptUser) return chatGptUser;
+      }
+    }
     if (!chatGptUsers.length) return;
     return chatGptUsers[Math.floor(Math.random() * chatGptUsers.length)];
   }
