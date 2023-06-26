@@ -37,9 +37,6 @@ export class PrivateConversationsService {
     const conversation = await this.privateConversationsRepository.findByFriendIds(friendId, userId);
     if (!conversation) throw new NotFoundException("Il n'y a pas de conversation entre vous deux !");
     const { id, createdAt } = conversation;
-    console.log('userId', userId);
-    console.log('friendId', friendId);
-    console.log('channelId', id);
     await this.privateConversationsRepository.updateMemberInChannel({
       memberId: userId,
       channelId: id,

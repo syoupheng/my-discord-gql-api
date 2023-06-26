@@ -9,6 +9,7 @@ import { ChannelMember } from '../users/entities/channel-member.entity';
 import { AvatarService } from '../avatar/avatar.service';
 import { PUB_SUB } from '../pubsub/pubsub.module';
 import { PubSub } from 'graphql-subscriptions';
+import { Friend } from 'src/friends/entities/friends.entity';
 
 @Injectable()
 export class PrivateGroupsService {
@@ -47,15 +48,20 @@ export class PrivateGroupsService {
       if (!member) throw new ForbiddenException('Un ou plusieurs des utilisateurs ne font pas partie de tes amis !');
       return member;
     });
-
-    const groupName = groupMembers.map(({ username }) => username).join(', ');
     const newGroup = await this.privateGroupsRepository.create({
-      name: groupName,
+      name: this.generateGroupName(groupMembers),
       members: groupMembers,
       avatarColor: this.avatarService.getColor(),
     });
     this.pubSub.publish('modifiedPrivateGroup', { newPrivateGroup: { payload: newGroup, membersIds: [...new Set(membersIds)] } });
     return newGroup;
+  }
+
+  generateGroupName(members: (AuthUser | Friend)[]) {
+    if (members.length <= 1) return 'Me, myself and I';
+    const usernames = members.map(({ username }) => username);
+    if (usernames.length > 3) return `${usernames.slice(0, 2).join(', ')} and co.`;
+    return `${usernames.slice(0, -1).join(', ')} and ${usernames.at(-1)}}`;
   }
 
   async editName(editNameInput: EditNameInput, userId: number): Promise<PrivateGroup> {

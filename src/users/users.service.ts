@@ -91,7 +91,8 @@ export class UsersService {
       },
     });
     if (chatGptUsers.length < 2) return;
-    const futureFriends = chatGptUsers.slice(0, Math.floor(chatGptUsers.length / 2));
+    const MAX_FRIENDS = 6;
+    const futureFriends = chatGptUsers.slice(0, Math.min(Math.floor(chatGptUsers.length / 2), MAX_FRIENDS));
     if (futureFriends.length) {
       await this.prisma.friendsWith
         .createMany({
@@ -102,7 +103,9 @@ export class UsersService {
       await Promise.allSettled(channelsToCreate);
     }
 
-    const futureFriendRequests = chatGptUsers.slice(Math.floor(chatGptUsers.length / 2));
+    let futureFriendRequests = chatGptUsers.slice(Math.floor(chatGptUsers.length / 2));
+    const MAX_FRIEND_REQUESTS = 5;
+    if (futureFriendRequests.length > MAX_FRIEND_REQUESTS) futureFriendRequests = futureFriendRequests.slice(0, MAX_FRIEND_REQUESTS);
     if (futureFriendRequests.length) {
       await this.prisma.friendRequest
         .createMany({
