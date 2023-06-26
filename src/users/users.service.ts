@@ -91,6 +91,7 @@ export class UsersService {
       },
     });
     if (chatGptUsers.length < 2) return;
+    chatGptUsers.sort(() => 0.5 - Math.random());
     const MAX_FRIENDS = 6;
     const futureFriends = chatGptUsers.slice(0, Math.min(Math.floor(chatGptUsers.length / 2), MAX_FRIENDS));
     if (futureFriends.length) {
