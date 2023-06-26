@@ -120,6 +120,13 @@ export class UsersService {
     }
   }
 
+  generateGroupName(members: ChannelMember[]) {
+    if (members.length <= 1) return 'Me, myself and I';
+    const usernames = members.map(({ username }) => username);
+    if (usernames.length > 3) return `${usernames.slice(0, 2).join(', ')} and co.`;
+    return `${usernames.slice(0, -1).join(', ')} and ${usernames.at(-1)}`;
+  }
+
   async initPrivateGroup(chatGptUsers: PrismaUser[], user: AuthUser) {
     const numMembers = Math.floor(Math.random() * Math.min(chatGptUsers.length, 7)) + 2;
     const remainingUsers = [...chatGptUsers];
@@ -131,7 +138,7 @@ export class UsersService {
     }
     await this.privateGroupRepository
       .create({
-        name: selectedMembers.map((member) => member.username).join(', '),
+        name: this.generateGroupName(selectedMembers),
         members: selectedMembers,
         avatarColor: this.avatarService.getColor(),
       })

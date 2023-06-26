@@ -61,7 +61,7 @@ export class PrivateGroupsService {
     if (members.length <= 1) return 'Me, myself and I';
     const usernames = members.map(({ username }) => username);
     if (usernames.length > 3) return `${usernames.slice(0, 2).join(', ')} and co.`;
-    return `${usernames.slice(0, -1).join(', ')} and ${usernames.at(-1)}}`;
+    return `${usernames.slice(0, -1).join(', ')} and ${usernames.at(-1)}`;
   }
 
   async editName(editNameInput: EditNameInput, userId: number): Promise<PrivateGroup> {
