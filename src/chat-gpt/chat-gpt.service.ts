@@ -39,12 +39,9 @@ export class ChatGptService {
       cursor: message.createdAt.toISOString(),
       take: HISTORY_LENGTH,
     });
-    const chatGptMessages: ChatCompletionRequestMessage[] = [
-      ...latestMessages,
-      { ...message, content: `As ${chatGptUser.member.chatGptRole} ${message.content}` },
-    ].map((message) => ({
+    const chatGptMessages: ChatCompletionRequestMessage[] = [...latestMessages, message].map((message) => ({
       role: message.authorId === chatGptUser.memberId ? 'assistant' : 'user',
-      content: message.content,
+      content: message.content.replace(/<@[1-9]\d*>/g, ''),
     }));
     chatGptMessages.unshift({
       role: 'system',
