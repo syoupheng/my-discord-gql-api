@@ -7,6 +7,7 @@ FROM node:18 As development
 WORKDIR /usr/src/app
 # Copying this first prevents re-running npm install on every code change.
 COPY --chown=node:node package*.json ./
+RUN npm i -g @nestjs/cli
 RUN npm ci
 COPY --chown=node:node . .
 RUN npm run prisma:generate
