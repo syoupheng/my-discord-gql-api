@@ -137,6 +137,7 @@ type Mutation {
   logout: SuccessResponse!
   markMessagesAsRead(messagesIds: [Int!]!): String!
   register(registerUserInput: RegisterUserInput!): AuthUser!
+  seedDatabase: String!
   sendFriendRequest(friendTag: FriendTag!): FriendRequest!
   sendMessage(sendMessageInput: SendMessageInput!): Message!
   showConversation(friendId: Int!): PrivateConversation!

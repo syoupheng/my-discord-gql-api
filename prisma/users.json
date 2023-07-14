@@ -1,5 +1,27 @@
 [
   {
+    "username": "testUser",
+    "discriminator": "0000",
+    "email": "testUser@gmail.com",
+    "status": "ONLINE",
+    "password": "$argon2id$v=19$m=4096,t=3,p=1$cKdnytOPWdst31WMzAyTYw$NQTxHXU7xeys0DkafYhjLUsUtzRPaVIit4DxoTBpK4E",
+    "phoneNumber": null,
+    "createdAt": "2023-06-25 15:58:31.454",
+    "chatGptRole": null,
+    "avatarColor": "#e6005c"
+  },
+  {
+    "username": "userThatExists",
+    "discriminator": "0000",
+    "email": "userThatExists@gmail.com",
+    "status": "ONLINE",
+    "password": "$argon2id$v=19$m=4096,t=3,p=1$cKdnytOPWdst31WMzAyTYw$NQTxHXU7xeys0DkafYhjLUsUtzRPaVIit4DxoTBpK4E",
+    "phoneNumber": null,
+    "createdAt": "2023-06-25 15:58:31.454",
+    "chatGptRole": null,
+    "avatarColor": "#e6005c"
+  },
+  {
     "username": "Rachel Green",
     "discriminator": "2385",
     "email": "rachel.green@gmail.com",
