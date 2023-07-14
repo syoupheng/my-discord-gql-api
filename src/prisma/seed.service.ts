@@ -23,7 +23,9 @@ export class SeedService {
   }
 
   async seed() {
-    if (process.env.NODE_ENV === 'production') throw new ForbiddenException('Cannot seed database in production !');
+    if (process.env.NODE_ENV === 'production' && process.env.STAGING_ENV !== 'true') {
+      throw new ForbiddenException('Cannot seed database in production !');
+    }
     await this.clearAllTables();
     await seedDatabase(this.prisma);
     return '🌱 Database seeded';
