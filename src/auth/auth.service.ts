@@ -56,6 +56,7 @@ export class AuthService {
       expires: dayjs()
         .add(this.config.get('HTTP_ONLY_COOKIE_EXP_TIME') ?? 1, 'days')
         .toDate(),
+      maxAge: 60 * 60 * 24 * (this.config.get('HTTP_ONLY_COOKIE_EXP_TIME') ?? 1),
     };
     return req.res.cookie('access_token', token, COOKIE_OPTIONS);
   }
