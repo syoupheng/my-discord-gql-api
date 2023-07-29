@@ -1,0 +1,18 @@
+# fly.toml app configuration file generated for discord-gpt-gql-api-prod on 2023-07-24T01:16:20+02:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "discord-gpt-gql-api-prod"
+primary_region = "cdg"
+
+[http_service]
+  internal_port = 3500
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = false
+  min_machines_running = 1
+  processes = ["app"]
+
+[env]
+  NODE_ENV = "production"
