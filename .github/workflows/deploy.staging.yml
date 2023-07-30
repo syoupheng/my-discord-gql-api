@@ -39,12 +39,12 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Run Playwright tests on Google Chrome
-        run: npx playwright test --project=chromium
-      - name: Run Playwright tests on Mozilla Firefox
-        run: npx playwright test --project=firefox
+      - name: Run Playwright tests
+        run: |
+          npx playwright test --project=chromium
+          npx playwright test --project=firefox
       - uses: actions/upload-artifact@v3
-        if: always()
+        if: failure()
         with:
           name: playwright-report
           path: playwright-report/
